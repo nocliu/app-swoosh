@@ -77,4 +77,10 @@ class LeagueVC: UIViewController {
         coedButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         coedButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let skillVC = segue.destination as? SkillVC {
+            skillVC.player = player
+        }
+    }
 }

@@ -19,7 +19,7 @@ class SkillVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        player = Player()
+        print(player.desiredLeague)
     }
     
     @IBAction func skillLevelButtonPressed(_ sender: UIButton) {
