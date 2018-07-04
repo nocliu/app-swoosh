@@ -12,7 +12,7 @@
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="WelcomeController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Welcome" customClass="WelcomeVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,7 +90,7 @@
         <!--League Options-->
         <scene sceneID="CtR-N0-R7L">
             <objects>
-                <viewController id="pne-Bm-ri3" userLabel="League Options" customClass="LeagueController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pne-Bm-ri3" userLabel="League Options" customClass="LeagueVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DLX-ga-9hL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +150,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3cp-zc-Buu" kind="show" id="8Cq-67-gjb"/>
+                                    <action selector="nextButtonPressed:" destination="pne-Bm-ri3" eventType="touchUpInside" id="ale-u5-PuW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yhm-Vp-PFx" userLabel="backButton1">
@@ -183,6 +183,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="let-aj-R8X"/>
                     </view>
+                    <connections>
+                        <segue destination="3cp-zc-Buu" kind="show" identifier="showSkillVC" id="6BA-R4-pdW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWA-Qv-8qt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xID-ay-tg5" userLabel="Exit" sceneMemberID="exit"/>
@@ -192,7 +195,7 @@
         <!--Skill Level-->
         <scene sceneID="bXs-jW-tb9">
             <objects>
-                <viewController id="3cp-zc-Buu" userLabel="Skill Level" customClass="SkillController" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3cp-zc-Buu" userLabel="Skill Level" customClass="SkillVC" customModule="Swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OxS-Qn-lCV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
