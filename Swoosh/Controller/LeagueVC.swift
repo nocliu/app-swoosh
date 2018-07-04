@@ -32,52 +32,49 @@ class LeagueVC: UIViewController {
     
     @IBAction func leagueButtonPressed(_ sender: UIButton) {
         switch sender.tag {
-        case 1: selectLeague(leagueType: "mens", senderTag: sender.tag)
-        case 2: selectLeague(leagueType: "womens", senderTag: sender.tag)
-        case 3: selectLeague(leagueType: "coed", senderTag: sender.tag)
+        case 1: setLeague(leagueType: "mens", senderTag: sender.tag)
+        case 2: setLeague(leagueType: "womens", senderTag: sender.tag)
+        case 3: setLeague(leagueType: "coed", senderTag: sender.tag)
         default:
             print("error in leagueButtonPressed")
         }
     }
     
-    func selectLeague(leagueType: String, senderTag: Int) {
-        switch senderTag {
-        case 1: changeButtons(tag: senderTag)
-        case 2: changeButtons(tag: senderTag)
-        case 3: changeButtons(tag: senderTag)
-        default:
-            print("error in selectLeague")
-        }
+    func setLeague(leagueType: String, senderTag: Int) {
         player.desiredLeague = leagueType
         nextBtn.isEnabled = true
-    }
-    
-    func changeButtons(tag: Int) {
-        if tag == 1 {
+        
+        if senderTag == 1 {
             mensButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             mensButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
             
-            womensButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            womensButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-            coedButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            coedButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        } else if tag == 2 {
+            womensButtonNormal()
+            coedButtonNormal()
+        } else if senderTag == 2 {
             womensButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             womensButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
             
-            mensButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            mensButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-            coedButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            coedButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+            mensButtonNormal()
+            coedButtonNormal()
         } else {
             coedButton.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             coedButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
             
-            mensButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            mensButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-            womensButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            womensButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+            mensButtonNormal()
+            womensButtonNormal()
         }
     }
     
+    func mensButtonNormal() {
+        mensButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        mensButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+    }
+    func womensButtonNormal() {
+        womensButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        womensButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+    }
+    func coedButtonNormal() {
+        coedButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        coedButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+    }
 }

@@ -13,6 +13,4 @@ struct Player {
     var desiredLeague: String?
     var skillLevel: String?
     
-    
-    
 }

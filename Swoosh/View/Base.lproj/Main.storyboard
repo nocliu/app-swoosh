@@ -234,7 +234,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WoI-JT-9YO">
                                 <rect key="frame" x="25" y="167" width="325" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erg-wz-m6B" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erg-wz-m6B" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="137.5" height="65"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
@@ -244,8 +244,11 @@
                                         <state key="normal" title="BEGINNER">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="skillLevelButtonPressed:" destination="3cp-zc-Buu" eventType="touchUpInside" id="uY2-6A-qaS"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phg-v9-4Fe" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phg-v9-4Fe" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                         <rect key="frame" x="187.5" y="0.0" width="137.5" height="65"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
@@ -255,10 +258,13 @@
                                         <state key="normal" title="BALLER">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="skillLevelButtonPressed:" destination="3cp-zc-Buu" eventType="touchUpInside" id="izG-dC-6Ie"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ex-LE-TsV" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ex-LE-TsV" customClass="BorderButton" customModule="Swoosh" customModuleProvider="target">
                                 <rect key="frame" x="16" y="585" width="343" height="67"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -298,6 +304,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qfc-dS-EVv"/>
                     </view>
+                    <connections>
+                        <outlet property="ballerButton" destination="phg-v9-4Fe" id="VJp-pk-MbS"/>
+                        <outlet property="beginnerButton" destination="Erg-wz-m6B" id="2qp-Te-AYx"/>
+                        <outlet property="finishButton" destination="9Ex-LE-TsV" id="3HB-RN-cPa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eu-bR-5BM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jXP-TU-NqA" userLabel="Exit" sceneMemberID="exit"/>
